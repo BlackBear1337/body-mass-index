@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Body mass index</title>
+</head>
+<body>
+    <h1>Индекс массы тела</h1>
+    <form method="GET">
+        {% csrf_token %}
+        <label for="m">
+            <h4>Вес</h4>
+            <input type="number" name="m" id="m" value="{{ m }}">
+        </label>
+        <label for="h">
+            <h4>Рост</h4>
+            <input type="number" name="h" id="h" value="{{ h }}">
+        </label>
+        <input type="submit" value="Calculate"/>
+        <h4> {{ body_index }} {{ i }} {{ mass_defect }} {{ underweight }}
+            {{ norm }} {{ overweight }} {{ obesity_one_degree }} {{ obesity_two_degree }}
+            {{ obesity_three_degree }}</h4>
+    </form>
+</body>
+</html>
